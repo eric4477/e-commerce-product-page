@@ -12,6 +12,11 @@ function NavBar() {
 
   return (
     <>
+      <MenuOverlay
+        showMenu={showMenu}
+        toggleMenu={toggleMenu}
+        setShowMenu={setShowMenu}
+      />
       <nav className="nav">
         <div className="left-nav">
           <button
@@ -53,11 +58,6 @@ function NavBar() {
         </div>
       </nav>
 
-      <MenuOverlay
-        showMenu={showMenu}
-        toggleMenu={toggleMenu}
-        setShowMenu={setShowMenu}
-      />
       <div className="border" />
     </>
   );
