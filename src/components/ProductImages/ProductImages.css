@@ -11,10 +11,6 @@
   transition: opacity 0.1s ease-in-out;
 }
 
-.product-image.fade {
-  opacity: 0;
-}
-
 .product-image img {
   width: 100%;
   border-radius: 15px;
