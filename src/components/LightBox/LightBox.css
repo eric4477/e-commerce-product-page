@@ -1,0 +1,126 @@
+.lightbox-wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: var(--overlay);
+}
+.lightbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.close-btn svg {
+  font-size: 30px;
+  color: var(--light-grayish-blue);
+  margin-right: -5px;
+  cursor: pointer;
+}
+
+.close-btn svg:hover {
+  color: var(--orange);
+}
+
+.lightbox-product-images {
+  width: 450px;
+  height: 450px;
+  border-radius: 12px;
+  position: relative;
+  user-select: none;
+}
+
+.left-arrow,
+.right-arrow {
+  background: var(--White);
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.left-arrow:hover,
+.right-arrow:hover {
+  color: var(--orange);
+}
+
+.left-arrow {
+  left: -23px;
+}
+.right-arrow {
+  right: -23px;
+}
+
+.lightbox-product-images img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.lightbox-thumbnail-images {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 20px;
+}
+
+.lightbox-thumbnail-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 30px;
+  position: relative;
+}
+
+.lightbox-thumbnail-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.lightbox-thumbnail-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+  opacity: 0;
+  visibility: none;
+}
+
+.lightbox-thumbnail-image:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+.lightbox-thumbnail-image.active::after {
+  opacity: 1;
+  visibility: visible;
+}
+/* media */
+
+@media screen and (max-width: 920px) {
+  .lightbox-wrapper {
+    display: none;
+  }
+}
