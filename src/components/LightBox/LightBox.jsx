@@ -16,7 +16,6 @@ function LightBox({ activeIndex, openLightBox, setOpenLightBox }) {
       if (prevIndex === 0) {
         return productImgs.length - 1;
       }
-      console.log(currIndex);
       return prevIndex - 1;
     });
   };
