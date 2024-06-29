@@ -1,7 +1,7 @@
 import "./ProductImages.css";
 import { productImgs, thumbnails } from "./../../constants";
 import { useEffect, useState } from "react";
-import LightBox from "../LightBox/LightBox";
+import LightBox from "../../components/LightBox/LightBox";
 
 function ProductImages() {
   const [activeIndex, setActiveIndex] = useState(0);

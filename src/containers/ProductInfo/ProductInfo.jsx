@@ -1,0 +1,58 @@
+import "./ProductInfo.css";
+import { StoreContext } from "../../context/StoreContextProvider";
+import { useContext } from "react";
+import { BsCart3 } from "react-icons/bs";
+function ProductInfo() {
+  const { itemCount, setItemCount } = useContext(StoreContext);
+
+  const handleMinusClick = () => {
+    setItemCount((prev) => {
+      if (prev === 0) {
+        return 0;
+      }
+      return prev - 1;
+    });
+  };
+
+  const handlePlusClick = () => {
+    setItemCount((prev) => {
+      return prev + 1;
+    });
+  };
+
+  return (
+    <div className="product-info">
+      <h3 className="subheading">SNEAKER COMPANY</h3>
+      <h1 className="heading">Fall Limited Edition Sneakers</h1>
+      <p className="desc">
+        These low-profile sneakers are your perfect casual wear companion.
+        Featuring a durable rubber outer sole, they&apos;ll withstand everything
+        the weather can offer.
+      </p>
+      <div className="price-container">
+        <div className="price">
+          <p>$125.00</p>
+        </div>
+        <div className="price-label">50%</div>
+      </div>
+      <p className="price-discount">$250.00</p>
+      <div className="btns-group">
+        <div className="count-btn">
+          <button onClick={handleMinusClick} type="button">
+            <img src="/icon-minus.svg" alt="minus-btn" />
+          </button>
+          <span>{itemCount}</span>
+          <button onClick={handlePlusClick} type="button">
+            <img src="/public/icon-plus.svg" alt="plus-btn" />
+          </button>
+        </div>
+        <button className="add-to-cart-btn">
+          <BsCart3 />
+          <span>Add to cart</span>
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export default ProductInfo;
