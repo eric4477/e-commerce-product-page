@@ -43,7 +43,7 @@ function ProductInfo() {
           </button>
           <span>{itemCount}</span>
           <button onClick={handlePlusClick} type="button">
-            <img src="/public/icon-plus.svg" alt="plus-btn" />
+            <img src="/icon-plus.svg" alt="plus-btn" />
           </button>
         </div>
         <button className="add-to-cart-btn">
