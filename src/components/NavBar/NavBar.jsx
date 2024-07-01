@@ -16,7 +16,9 @@ function NavBar() {
   };
 
   const toggleCart = () => {
-    setShowCart(!showCart);
+    if (addedItems) {
+      setShowCart(!showCart);
+    }
   };
 
   return (
