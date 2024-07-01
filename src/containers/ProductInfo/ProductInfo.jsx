@@ -3,23 +3,27 @@ import { StoreContext } from "../../context/StoreContextProvider";
 import { useContext } from "react";
 import { BsCart3 } from "react-icons/bs";
 function ProductInfo() {
-  const { itemCount, setItemCount } = useContext(StoreContext);
-
-  const handleMinusClick = () => {
-    setItemCount((prev) => {
-      if (prev === 0) {
-        return 0;
-      }
-      return prev - 1;
-    });
-  };
+  const {
+    itemCount,
+    setItemCount,
+    setAddedItems,
+    setShowCart,
+    handleMinusClick,
+  } = useContext(StoreContext);
 
   const handlePlusClick = () => {
     setItemCount((prev) => {
+      setAddedItems(false);
+      setShowCart(false);
       return prev + 1;
     });
   };
 
+  const handleAddToCartClick = () => {
+    if (itemCount > 0) {
+      setAddedItems(true);
+    }
+  };
   return (
     <div className="product-info">
       <h3 className="subheading">SNEAKER COMPANY</h3>
@@ -46,7 +50,7 @@ function ProductInfo() {
             <img src="/icon-plus.svg" alt="plus-btn" />
           </button>
         </div>
-        <button className="add-to-cart-btn">
+        <button onClick={handleAddToCartClick} className="add-to-cart-btn">
           <BsCart3 />
           <span>Add to cart</span>
         </button>

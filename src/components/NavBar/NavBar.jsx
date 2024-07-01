@@ -1,13 +1,22 @@
-import { useState } from "react";
 import "./NavBar.css";
+import { useContext, useState } from "react";
 import MenuOverlay from "../MenuOverlay/MenuOverlay";
+import Cart from "../Cart/Cart";
+import { StoreContext } from "../../context/StoreContextProvider";
 
 function NavBar() {
+  const { addedItems, itemCount, showCart, setShowCart } =
+    useContext(StoreContext);
+
   const [showMenu, setShowMenu] = useState(false);
 
   // Function to toggle menu
   const toggleMenu = () => {
     setShowMenu(!showMenu);
+  };
+
+  const toggleCart = () => {
+    setShowCart(!showCart);
   };
 
   return (
@@ -49,9 +58,15 @@ function NavBar() {
           </ul>
         </div>
         <div className="right-nav">
-          <button type="button" aria-label="Add to cart">
-            <img src="/icon-cart.svg" alt="cart icon" />
-          </button>
+          <div className="add-to-cart">
+            {itemCount > 0 && addedItems && (
+              <span className="count-items">{itemCount}</span>
+            )}
+            <button onClick={toggleCart} type="button" aria-label="Add to cart">
+              <img src="/icon-cart.svg" alt="cart icon" />
+            </button>
+          </div>
+          {showCart && itemCount > 0 && <Cart />}
           <div className="profile">
             <img src="/image-avatar.png" alt="profile" />
           </div>

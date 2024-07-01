@@ -13,6 +13,7 @@
 .lightbox {
   display: flex;
   flex-direction: column;
+  width: 450px;
 }
 
 .close-btn {
@@ -34,7 +35,7 @@
 }
 
 .lightbox-product-images {
-  width: 450px;
+  width: 100%;
   height: 450px;
   border-radius: 12px;
   position: relative;

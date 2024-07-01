@@ -63,16 +63,33 @@
   align-items: center;
   justify-content: flex-end;
   gap: 45px;
+  position: relative;
 }
 
-.right-nav button {
+.right-nav .add-to-cart {
+  position: relative;
+}
+
+.right-nav .add-to-cart .count-items {
+  position: absolute;
+  right: -10px;
+  top: -9px;
+  border-radius: 20px;
+  padding: 0px 5px;
+  font-size: 12px;
+  color: var(--White);
+  font-weight: 700;
+  background-color: var(--orange);
+}
+
+.right-nav .add-to-cart button {
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
 
-.right-nav button img {
+.right-nav .add-to-cart button img {
   width: 100%;
   height: 100%;
 }
