@@ -15,7 +15,7 @@ function Cart() {
       <div className="border" />
       <div className="cart-product">
         <div className="cart-product-img">
-          <img src="/public/image-product-1-thumbnail.jpg" alt="img" />
+          <img src="/image-product-1-thumbnail.jpg" alt="Product Image" />
         </div>
         <div className="cart-product-info">
           <p>Fall Limited Edition Sneakers</p>
@@ -24,7 +24,7 @@ function Cart() {
           </p>
         </div>
         <button onClick={handleMinusClick} className="delete-product-btn">
-          <img src="/public/icon-delete.svg" alt="remove" />
+          <img src="/icon-delete.svg" alt="remove" />
         </button>
       </div>
       <div className="checkout">
