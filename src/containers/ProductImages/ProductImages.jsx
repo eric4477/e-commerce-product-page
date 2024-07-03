@@ -1,6 +1,7 @@
 import "./ProductImages.css";
 import { productImgs, thumbnails } from "./../../constants";
 import { useEffect, useState } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import LightBox from "../../components/LightBox/LightBox";
 
 function ProductImages() {
@@ -13,6 +14,24 @@ function ProductImages() {
   };
   const handleImageClick = () => {
     setOpenLightBox(!openLightBox);
+  };
+
+  const handleLeftArrowClick = () => {
+    setActiveIndex((prevIndex) => {
+      if (prevIndex === 0) {
+        return productImgs.length - 1;
+      }
+      return prevIndex - 1;
+    });
+  };
+
+  const handleRightArrowClick = () => {
+    setActiveIndex((prevIndex) => {
+      if (prevIndex >= productImgs.length - 1) {
+        return 0;
+      }
+      return prevIndex + 1;
+    });
   };
   useEffect(() => {
     setActiveImg(productImgs[activeIndex]);
@@ -30,6 +49,14 @@ function ProductImages() {
       <div className="product-images">
         <div onClick={handleImageClick} className="product-image">
           <img src={activeImg} alt={`Product Image ${activeIndex + 1}`} />
+          <FaChevronLeft
+            onClick={handleLeftArrowClick}
+            className="left-arrow"
+          />
+          <FaChevronRight
+            onClick={handleRightArrowClick}
+            className="right-arrow"
+          />
         </div>
         <div className="thumbnail-images">
           {thumbnails.map((thumbnail, index) => (

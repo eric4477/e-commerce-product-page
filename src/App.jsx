@@ -1,11 +1,11 @@
 import "./App.css";
-import NavBar from "./components/NavBar/NavBar";
+import Header from "./containers/Header/Header";
 import ProductSection from "./containers/ProductSection/ProductSection";
 
 function App() {
   return (
     <div className="app">
-      <NavBar />
+      <Header />
       <ProductSection />
     </div>
   );

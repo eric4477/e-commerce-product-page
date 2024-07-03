@@ -6,3 +6,30 @@
   gap: 12%;
   padding-left: 50px;
 }
+
+@media screen and (max-width: 1200px) {
+  .product-section {
+    padding-left: 20px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .product-section {
+    width: 100%;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .product-section {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .product-section {
+    gap: 20px;
+  }
+}

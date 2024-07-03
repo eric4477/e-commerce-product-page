@@ -42,8 +42,8 @@
   user-select: none;
 }
 
-.left-arrow,
-.right-arrow {
+.lightbox .left-arrow,
+.lightbox .right-arrow {
   background: var(--White);
   width: 45px;
   height: 45px;
@@ -55,15 +55,15 @@
   cursor: pointer;
 }
 
-.left-arrow:hover,
-.right-arrow:hover {
+.lightbox .left-arrow:hover,
+.lightbox .right-arrow:hover {
   color: var(--orange);
 }
 
-.left-arrow {
+.lightbox .left-arrow {
   left: -23px;
 }
-.right-arrow {
+.lightbox .right-arrow {
   right: -23px;
 }
 
@@ -121,7 +121,7 @@
 
 /* media */
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 1000px) {
   .lightbox-wrapper {
     display: none;
   }

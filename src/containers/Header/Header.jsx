@@ -1,10 +1,10 @@
-import "./NavBar.css";
+import "./Header.css";
 import { useContext, useState } from "react";
-import MenuOverlay from "../MenuOverlay/MenuOverlay";
-import Cart from "../Cart/Cart";
+import MenuOverlay from "../../components/MenuOverlay/MenuOverlay";
+import Cart from "../../components/Cart/Cart";
 import { StoreContext } from "../../context/StoreContextProvider";
 
-function NavBar() {
+function Header() {
   const { addedItems, itemCount, showCart, setShowCart } =
     useContext(StoreContext);
 
@@ -14,11 +14,9 @@ function NavBar() {
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
-
+  // Function to toggle cart
   const toggleCart = () => {
-    if (addedItems) {
-      setShowCart(!showCart);
-    }
+    setShowCart(!showCart);
   };
 
   return (
@@ -68,7 +66,7 @@ function NavBar() {
               <img src="/icon-cart.svg" alt="cart icon" />
             </button>
           </div>
-          {showCart && itemCount > 0 && <Cart />}
+          {showCart && <Cart />}
           <div className="profile">
             <img src="/image-avatar.png" alt="profile" />
           </div>
@@ -80,4 +78,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default Header;

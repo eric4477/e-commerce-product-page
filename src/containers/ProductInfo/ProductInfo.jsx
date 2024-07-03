@@ -33,13 +33,15 @@ function ProductInfo() {
         Featuring a durable rubber outer sole, they&apos;ll withstand everything
         the weather can offer.
       </p>
-      <div className="price-container">
-        <div className="price">
-          <p>$125.00</p>
+      <div className="prices-wrapper">
+        <div className="price-container">
+          <div className="price">
+            <p>$125.00</p>
+          </div>
+          <div className="price-label">50%</div>
         </div>
-        <div className="price-label">50%</div>
+        <p className="price-discount">$250.00</p>
       </div>
-      <p className="price-discount">$250.00</p>
       <div className="btns-group">
         <div className="count-btn">
           <button onClick={handleMinusClick} type="button">

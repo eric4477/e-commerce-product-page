@@ -13,24 +13,37 @@ function Cart() {
         <h4>Cart</h4>
       </div>
       <div className="border" />
-      <div className="cart-product">
-        <div className="cart-product-img">
-          <img src="/image-product-1-thumbnail.jpg" alt="Product Image" />
-        </div>
-        <div className="cart-product-info">
-          <p>Fall Limited Edition Sneakers</p>
-          <p>
-            $125.00 x {itemCount} <span>${125 * itemCount}.00</span>
-          </p>
-        </div>
-        <button onClick={handleMinusClick} className="delete-product-btn">
-          <img src="/icon-delete.svg" alt="remove" />
-        </button>
-      </div>
-      <div className="checkout">
-        <button onClick={handleCheckout} className="checkout-btn" type="button">
-          Checkout
-        </button>
+
+      <div className={`cart-main ${itemCount === 0 ? "item-center" : ""}`}>
+        {itemCount > 0 ? (
+          <>
+            <div className="cart-product">
+              <div className="cart-product-img">
+                <img src="/image-product-1-thumbnail.jpg" alt="Product Image" />
+              </div>
+              <div className="cart-product-info">
+                <p>Fall Limited Edition Sneakers</p>
+                <p>
+                  $125.00 x {itemCount} <span>${125 * itemCount}.00</span>
+                </p>
+              </div>
+              <button onClick={handleMinusClick} className="delete-product-btn">
+                <img src="/icon-delete.svg" alt="remove" />
+              </button>
+            </div>
+            <div className="checkout">
+              <button
+                onClick={handleCheckout}
+                className="checkout-btn"
+                type="button"
+              >
+                Checkout
+              </button>
+            </div>
+          </>
+        ) : (
+          <span className="empty-cart-text">Your cart is empty.</span>
+        )}
       </div>
     </div>
   );

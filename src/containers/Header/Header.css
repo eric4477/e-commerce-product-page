@@ -5,6 +5,7 @@
   width: 100%;
   padding: 40px 0px;
   font-size: 1rem;
+  position: relative;
 }
 
 .nav .menu-btn {
@@ -102,7 +103,7 @@
 }
 
 .right-nav .profile:hover {
-  outline: 2px solid var(--orange);
+  border: 2px solid var(--orange);
 }
 
 .right-nav .profile img {
@@ -153,6 +154,18 @@
   }
 }
 
+@media screen and (max-width: 1000px) {
+  .nav {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 650px) {
+  .nav {
+    width: 90%;
+  }
+}
+
 @media screen and (max-width: 430px) {
   .left-nav {
     padding-bottom: 3px;
@@ -183,5 +196,14 @@
   .right-nav .profile {
     width: 25px;
     height: 25px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .nav {
+    padding: 20px 0;
+  }
+  .right-nav {
+    position: static;
   }
 }
