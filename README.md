@@ -14,7 +14,7 @@ Welcome to the E-commerce Product Page project! This project is a simple e-comme
 
 ### Preview
 
-![E-commerce Product Page Preview]![ecommerce-product-page](https://github.com/eric4477/ecommerce-product-page/assets/108191582/9aad43da-a437-40d3-9c04-1135c3d8604d)
+![E-commerce Product Page Preview](https://github.com/eric4477/ecommerce-product-page/assets/108191582/9aad43da-a437-40d3-9c04-1135c3d8604d)
 
 ### Links
 
