@@ -3,11 +3,11 @@ export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
   const [itemCount, setItemCount] = useState(0);
   const [addedItems, setAddedItems] = useState(false);
-  const [showCart, setShowCart] = useState(false);
 
   const handleMinusClick = () => {
     setItemCount((prev) => {
       if (prev === 0) {
+        setAddedItems(false);
         return 0;
       }
       return prev - 1;
@@ -20,8 +20,6 @@ const StoreContextProvider = (props) => {
     addedItems,
     setAddedItems,
     handleMinusClick,
-    showCart,
-    setShowCart,
   };
 
   return (

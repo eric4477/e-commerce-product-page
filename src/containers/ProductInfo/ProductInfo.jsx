@@ -3,18 +3,14 @@ import { StoreContext } from "../../context/StoreContextProvider";
 import { useContext } from "react";
 import { BsCart3 } from "react-icons/bs";
 function ProductInfo() {
-  const {
-    itemCount,
-    setItemCount,
-    setAddedItems,
-    setShowCart,
-    handleMinusClick,
-  } = useContext(StoreContext);
+  const { itemCount, setItemCount, setAddedItems, handleMinusClick } =
+    useContext(StoreContext);
 
   const handlePlusClick = () => {
     setItemCount((prev) => {
-      setAddedItems(false);
-      setShowCart(false);
+      if (itemCount === 0) {
+        setAddedItems(false);
+      }
       return prev + 1;
     });
   };

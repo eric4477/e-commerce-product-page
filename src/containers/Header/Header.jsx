@@ -5,10 +5,10 @@ import Cart from "../../components/Cart/Cart";
 import { StoreContext } from "../../context/StoreContextProvider";
 
 function Header() {
-  const { addedItems, itemCount, showCart, setShowCart } =
-    useContext(StoreContext);
+  const { addedItems, itemCount } = useContext(StoreContext);
 
   const [showMenu, setShowMenu] = useState(false);
+  const [showCart, setShowCart] = useState(false);
 
   // Function to toggle menu
   const toggleMenu = () => {

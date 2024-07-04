@@ -2,7 +2,7 @@ import "./Cart.css";
 import { useContext } from "react";
 import { StoreContext } from "../../context/StoreContextProvider";
 function Cart() {
-  const { itemCount, setItemCount, handleMinusClick } =
+  const { itemCount, setItemCount, addedItems, handleMinusClick } =
     useContext(StoreContext);
   const handleCheckout = () => {
     setItemCount(0);
@@ -14,8 +14,12 @@ function Cart() {
       </div>
       <div className="border" />
 
-      <div className={`cart-main ${itemCount === 0 ? "item-center" : ""}`}>
-        {itemCount > 0 ? (
+      <div
+        className={`cart-main ${
+          itemCount === 0 || !addedItems ? "item-center" : ""
+        }`}
+      >
+        {itemCount > 0 && addedItems ? (
           <>
             <div className="cart-product">
               <div className="cart-product-img">
