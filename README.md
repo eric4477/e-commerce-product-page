@@ -34,5 +34,6 @@ Welcome to the E-commerce Product Page project! This project is a simple e-comme
 - Semantic HTML5 markup
 - CSS
 - Flexbox
-- [React](https://reactjs.org/) - JS library
-- [React Icons](https://react-icons.github.io/react-icons/) - For icons
+- React
+- Context API - For state management
+- React Icons - For icon
